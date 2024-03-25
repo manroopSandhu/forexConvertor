@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Forex Currency Convertor</h1>
+    <form action="" method="POST">
+      <label>Converting from: </label>
+      <input type="text" name="converting-from" class="converting-from" />
+      <br />
+      <br />
+      <label>Converting to: </label>
+      <input type="text" name="converting-to" class="converting-to" />
+      <br />
+      <br />
+      <label>Amount: </label>
+      <input type="text" name="amount" class="amount" />
+      <br />
+      <br />
+      <input id="btn" type="submit" value="Convert" />
+    </form>
+    {% if res %}
+    <p>The Result Is {{ symbol }} {{ res.result }}</p>
+    {% endif %}
+    <br />
+    <div class="container">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %} {{ message }} {% endfor %} {% endif %} {% endwith
+      %}
+    </div>
+  </body>
+</html>
